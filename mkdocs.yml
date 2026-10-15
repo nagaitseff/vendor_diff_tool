@@ -1,0 +1,39 @@
+site_name: Vendor Diff Tool
+site_description: Сравнение выгрузки вендора и доработанной версии
+docs_dir: site_docs
+site_dir: site
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.instant
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Главная: index.md
+  - Сводка: SUMMARY.md
+  - Все добавленные объекты: ADDED.md
+  - Наши добавленные объекты: OUR_ADDED.md
+  - Изменённые объекты с нашими маркерами: MODIFIED_WITH_OUR_MARKERS.md
+  - Изменённые объекты без наших маркеров: MODIFIED_WITHOUT_OUR_MARKERS.md
+  - Удалённые объекты: REMOVED.md
+  - Отчёт о запуске: run_report.md

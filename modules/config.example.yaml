@@ -1,0 +1,154 @@
+# Пример конфигурации Vendor Diff Tool.
+# Этот файл можно копировать как config.yaml и править под свой проект.
+
+project:
+  # Человекочитаемое имя проекта. Используется в метаданных и отчётах.
+  name: Vendor Diff Tool
+
+  # Версия проекта/инструмента.
+  # Желательно поддерживать её синхронно с __version__ в пакете.
+  version: 0.1.0
+
+  # Краткое описание проекта.
+  description: Сравнение выгрузки вендора и доработанной версии
+
+paths:
+  # Каталог с чистой выгрузкой вендора.
+  vendor_dir: "C:\\REP\\erp_clean\\src\\cf"
+
+  # Каталог с доработанной выгрузкой.
+  custom_dir: "C:\\REP\\erp\\src\\cf"
+
+  # Каталог, куда будет записан результат сравнения:
+  # markdown-отчёты, карточки объектов, run_report и служебный кэш.
+  output_dir: vendor_diff_output
+
+scan:
+  # Какие расширения участвуют в сканировании.
+  # Обычно достаточно XML и BSL.
+  include_extensions:
+    - .xml
+    - .bsl
+
+  # Каталоги, которые нужно исключить по префиксу имени.
+  # Удобно для служебных папок, которые не дают полезного diff.
+  exclude_dirs_prefixes:
+    - CommonPictures
+    - CommonTemplates
+
+  # Файлы, которые нужно исключить по префиксу имени.
+  # Если правило не нужно, оставьте пустой список.
+  exclude_files_prefixes: []
+
+  # Файлы, которые нужно исключить по точному имени.
+  # Обычно сюда попадают служебные файлы выгрузки конфигурации.
+  exclude_files_exact:
+    - Configuration.xml
+    - ConfigDumpInfo.xml
+    - Help.xml
+
+classification:
+  # Включает отдельную классификацию "наши добавленные объекты".
+  # Если false, added останутся просто added без дополнительного деления.
+  enable_our_added_classification: true
+
+  custom_name_markers:
+    # Маркеры имени объекта, по которым можно распознать,
+    # что добавленный объект относится к нашим доработкам.
+    #
+    # Примеры:
+    # starts_with:
+    #   - вт_
+    #   - my_
+    # ends_with:
+    #   - _ка
+    #   - _custom
+    starts_with:
+      - Мечел_
+      - мп_
+      - умп_
+      - юк_
+      - УАП
+      - уап_
+      - RMQ
+      - rmq_
+      - Мечел
+      - юк
+    ends_with:
+      - _Мечел
+      - Мечел
+      - юк
+
+  content_detection:
+    # Включает поиск наших маркеров внутри diff изменённых файлов.
+    enabled: true
+
+    # Искать маркеры в идентификаторах в начале слова/имени.
+    detect_in_identifier_start: true
+
+    # Искать маркеры в идентификаторах в конце слова/имени.
+    detect_in_identifier_end: true
+
+    # Искать маркеры в комментариях после //.
+    detect_in_comment_after_slashes: true
+
+    # Искать вхождение маркера внутри слова.
+    # Обычно лучше false, чтобы не ловить лишние совпадения.
+    detect_inside_word: false
+
+compare:
+  # Режим сравнения файлов.
+  # Сейчас основной практический вариант — bytes.
+  mode: bytes
+
+  # Публиковать ли в результатах файлы без изменений.
+  # Обычно false, чтобы не засорять результат.
+  publish_unchanged: false
+
+markdown:
+  # Переписывать ли директивы BSL для более удобного отображения в Markdown.
+  rewrite_bsl_directives: true
+
+reports:
+  # Печатать ли подробный прогресс в консоль.
+  verbose_console: true
+
+  # Генерировать ли отчёт по собственным добавленным объектам.
+  write_our_added_report: true
+  our_added_report_name: OUR_ADDED.md
+
+  # Генерировать ли отчёт по modified-объектам,
+  # где в diff найдены наши маркеры.
+  write_modified_with_markers_report: true
+  modified_with_markers_report_name: MODIFIED_WITH_OUR_MARKERS.md
+
+  # Генерировать ли отчёт по modified-объектам,
+  # где наши маркеры не найдены.
+  write_modified_without_markers_report: true
+  modified_without_markers_report_name: MODIFIED_WITHOUT_OUR_MARKERS.md
+
+site:
+  # Размер шрифта для полных diff-блоков и обычных кодовых блоков на сайте.
+  code_font_size: 8pt
+
+  # Размер шрифта для кратких цветных блоков:
+  # "Что добавлено", "Что удалено", "Было", "Стало".
+  diff_summary_font_size: 8pt
+
+# === Производительность ===
+performance:
+  # Количество параллельных потоков.
+  # null = авто (минимум из 16 и CPU*2).
+  max_workers: null
+
+  # Пропускать diff для файлов больше этого размера (MB)
+  max_diff_file_size_mb: 5
+
+  # Таймаут на обработку одного файла (секунды)
+  future_timeout_seconds: 300
+
+obsidian:
+  # Включить генерацию Obsidian-волта
+  enabled: false
+  # Имя каталога для волта (рядом с output_dir)
+  vault_dir: vendor_diff_output_obsidian

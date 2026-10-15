@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local configuration
+config.yaml
+
+# Local packages cache / manual downloads
+packages/*.tmp
+packages/*.log
+
+# Generated comparison output
+vendor_diff_output/
+vendor_diff_output_obsidian/
+output/
+site/
+site_docs/
+
+# MkDocs cache
+.cache/
+
+# Test / runtime artifacts
+*.log
+*.tmp
+
+# Reports that may be generated outside ignored output dirs
+run_report.md
+run_report.json
+
+config.yaml

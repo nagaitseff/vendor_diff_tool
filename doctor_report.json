@@ -1,0 +1,157 @@
+[
+  {
+    "status": "OK",
+    "title": "config.yaml",
+    "details": "Файл конфигурации найден: config.yaml"
+  },
+  {
+    "status": "OK",
+    "title": "Пути конфигурации",
+    "details": "vendor_dir: C:\\REP\\erp_clean\\src\\cf\ncustom_dir: C:\\REP\\erp_second\\src\\cf\noutput_dir: vendor_diff_output"
+  },
+  {
+    "status": "WARN",
+    "title": "Каталог результата",
+    "details": "Ещё не создан: vendor_diff_output"
+  },
+  {
+    "status": "WARN",
+    "title": "Кэш resume-markdown",
+    "details": "Кэш не найден. Команда resume-markdown пока не сможет стартовать.\nСначала выполните хотя бы один успешный run до конца шага 3."
+  },
+  {
+    "status": "WARN",
+    "title": "Каталог site_docs",
+    "details": "Пока не создан. Для локального сайта выполните: python main.py build-site --config config.yaml"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\main.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\mkdocs.yml"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\config.example.yaml"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\cli.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\models.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\reporting.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\markdown_renderer.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\doctor.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\site_builder.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\scanner.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\comparator.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\modules\\xml_linker.py"
+  },
+  {
+    "status": "OK",
+    "title": "Файл проекта",
+    "details": "Найден: C:\\REP\\vendor_diff_tool\\README.md"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.models"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.reporting"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.markdown_renderer"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.xml_linker"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.site_builder"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.cli"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.doctor"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.scanner"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.comparator"
+  },
+  {
+    "status": "OK",
+    "title": "Импорт модуля",
+    "details": "modules.config"
+  },
+  {
+    "status": "OK",
+    "title": "Контракт models.py",
+    "details": "Все ожидаемые модели и поля на месте"
+  },
+  {
+    "status": "WARN",
+    "title": "Проверка ссылок (output_dir)",
+    "details": "Каталог не найден: vendor_diff_output"
+  },
+  {
+    "status": "WARN",
+    "title": "Проверка ссылок (site_docs)",
+    "details": "Каталог не найден: site_docs"
+  }
+]
